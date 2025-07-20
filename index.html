@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KPS - Kuwait Pharmaceutical Society</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      section.classList.toggle('hidden');
+    }
+    function switchLang(lang) {
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-green-700">KPS - Kuwait Pharmaceutical Society</h1>
+      <nav class="space-x-4 text-sm">
+        <button onclick="switchLang('en')" class="hover:text-green-600">EN</button>
+        <button onclick="switchLang('ar')" class="hover:text-green-600">AR</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-green-100 py-20 text-center">
+    <div class="container mx-auto px-4">
+      <h2 data-lang="en" class="text-4xl font-semibold mb-4">Welcome to KPS Guidelines Portal</h2>
+      <h2 data-lang="ar" class="text-4xl font-semibold mb-4 hidden">مرحبًا بكم في بوابة إرشادات جمعية الصيادلة الكويتية</h2>
+      <p data-lang="en" class="text-lg text-gray-700">Trusted health recommendations tailored for Kuwait & the Gulf region.</p>
+      <p data-lang="ar" class="text-lg text-gray-700 hidden">توصيات صحية موثوقة مصممة للكويت ومنطقة الخليج.</p>
+    </div>
+  </section>
+
+  <!-- Collapsible Section Template -->
+  <section class="py-8">
+    <div class="container mx-auto px-4">
+      <button onclick="toggleSection('guidelines')" class="text-2xl font-semibold text-green-700 hover:underline">Health Guidelines / الإرشادات الصحية</button>
+      <div id="guidelines" class="mt-4">
+        <p data-lang="en" class="text-gray-600">Coming soon: Up-to-date, evidence-based guidance on key health topics tailored for the GCC population.</p>
+        <p data-lang="ar" class="text-gray-600 hidden">قريبًا: إرشادات حديثة قائمة على الأدلة حول مواضيع صحية رئيسية مخصصة لسكان مجلس التعاون الخليجي.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-100 py-8">
+    <div class="container mx-auto px-4">
+      <button onclick="toggleSection('resources')" class="text-2xl font-semibold text-green-700 hover:underline">Resources / الموارد</button>
+      <div id="resources" class="mt-4">
+        <p data-lang="en" class="text-gray-600">We'll be sharing tools, documents, and useful links for both healthcare professionals and the public.</p>
+        <p data-lang="ar" class="text-gray-600 hidden">سنشارك أدوات ووثائق وروابط مفيدة لكل من المتخصصين في الرعاية الصحية والجمهور.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-8">
+    <div class="container mx-auto px-4">
+      <button onclick="toggleSection('about')" class="text-2xl font-semibold text-green-700 hover:underline">About Us / من نحن</button>
+      <div id="about" class="mt-4">
+        <p data-lang="en" class="text-gray-600">This platform provides culturally relevant, accessible, and scientifically backed health information for the GCC.</p>
+        <p data-lang="ar" class="text-gray-600 hidden">توفر هذه المنصة معلومات صحية مدعومة علميًا وسهلة الوصول وملائمة ثقافيًا لسكان الخليج.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-green-100 py-8">
+    <div class="container mx-auto px-4">
+      <button onclick="toggleSection('contact')" class="text-2xl font-semibold text-green-700 hover:underline">Contact / تواصل معنا</button>
+      <div id="contact" class="mt-4">
+        <p data-lang="en" class="text-gray-700">Email us at <a href="mailto:info@kps.org.kw" class="text-green-800 font-semibold">info@kps.org.kw</a></p>
+        <p data-lang="ar" class="text-gray-700 hidden">راسلنا على البريد الإلكتروني: <a href="mailto:info@kps.org.kw" class="text-green-800 font-semibold">info@kps.org.kw</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-4 text-center text-sm text-gray-500">
+    &copy; 2025 KPS - Kuwait Pharmaceutical Society. All rights reserved.
+  </footer>
+</body>
+</html>
